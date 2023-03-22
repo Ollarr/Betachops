@@ -1,6 +1,11 @@
+import Image from "next/image";
 import React, { useState } from "react";
-import { AiOutlineMenu } from "react-icons/ai";
-import Button from "./Button";
+import {
+  AiOutlineMenu,
+  AiOutlineClose,
+  AiOutlineShoppingCart,
+} from "react-icons/ai";
+import Button from "../components/Button";
 
 const Navbar = () => {
   const Links = [
@@ -19,21 +24,21 @@ const Navbar = () => {
       text-gray-800"
         >
           <span className="text-3xl text-indigo-600 mr-1 pt-2">
-            <ion-icon name="logo-ionic"></ion-icon>
+            {/* <Image className="logo-image" alt="logo-image" /> */}
           </span>
           Betachops
         </div>
 
         <div
           onClick={() => setOpen(!open)}
-          className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden"
+          className="text-3xl text-black absolute right-8 top-6 cursor-pointer md:hidden"
         >
-          <AiOutlineMenu />
+          {open ? <AiOutlineClose /> : <AiOutlineMenu />}
         </div>
 
         <ul
           className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
-            open ? "top-20 " : "top-[-490px]"
+            open ? "top-[60px] " : "top-[-490px]"
           }`}
         >
           {Links.map((link) => (
@@ -49,7 +54,10 @@ const Navbar = () => {
               </a>
             </li>
           ))}
-          <Button>Shop now</Button>
+          <Button>Shop Now </Button>
+          <div className="text-black text-3xl md:px-6 py-4">
+            <AiOutlineShoppingCart />
+          </div>
         </ul>
       </div>
     </div>
