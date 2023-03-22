@@ -10,9 +10,9 @@ import Button from "../components/Button";
 const Navbar = () => {
   const Links = [
     { name: "HOME", link: "/" },
-    { name: "ABOUT", link: "/" },
-    { name: "PORTFOLIO", link: "/" },
+    { name: "SHOP", link: "/" },
     { name: "CONTACT", link: "/" },
+
     // { name: "BLOGS", link: "/" },
   ];
   const [open, setOpen] = useState(false);
@@ -23,10 +23,13 @@ const Navbar = () => {
           className="font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
       text-gray-800"
         >
-          <span className="text-3xl text-indigo-600 mr-1 pt-2">
-            {/* <Image className="logo-image" alt="logo-image" /> */}
+          <span className="text-3xl text-indigo-600 pt-2 text-orange-600">
+            {/* <Image className="logo-image" alt="logo-image" /> */}B
           </span>
-          Betachops
+          <span className="text-3xl text-indigo-600 pt-2">
+            {/* <Image className="logo-image" alt="logo-image" /> */}
+            etachops
+          </span>
         </div>
 
         <div
@@ -54,7 +57,18 @@ const Navbar = () => {
               </a>
             </li>
           ))}
-          <Button>Shop Now </Button>
+          <div className="flex ml-8 space-x-8">
+            <Button>
+              <li className="">
+                <a href="/">SIGN IN</a>
+              </li>
+            </Button>
+            <Button>
+              <li className="">
+                <a href="/">SIGN UP</a>
+              </li>
+            </Button>
+          </div>
           <div className="text-black text-3xl md:px-6 py-4">
             <AiOutlineShoppingCart />
           </div>
