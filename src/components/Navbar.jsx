@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import { useRouter } from "next/router";
+import React, { useState, useEffect } from "react";
 import {
   AiOutlineMenu,
   AiOutlineClose,
@@ -15,12 +16,17 @@ const Navbar = () => {
     { name: "CONTACT", link: "/contact" },
   ];
   const [open, setOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState(Links[0].name);
+  const [activeLink, setActiveLink] = useState("");
+  const router = useRouter();
 
   const handleLinkClick = (name) => {
     setActiveLink(name);
     setOpen(false);
   };
+
+  useEffect(() => {
+    setActiveLink(router.pathname);
+  }, [router.pathname]);
 
   return (
     <div className="shadow-md w-full fixed top-0 left-0">
@@ -45,13 +51,13 @@ const Navbar = () => {
             <li
               key={link.name}
               className={`md:ml-8 text-md md:my-0 my-7 font-[nunito] ${
-                activeLink === link.name ? "bg-gray-200" : ""
+                activeLink === link.link ? " border-solid border-2 p-[4px]" : ""
               }`}
             >
               <Link href={link.link}>
                 <div
                   title={link.name}
-                  onClick={() => handleLinkClick(link.name)}
+                  onClick={() => handleLinkClick(link.link)}
                   className="text-gray-800 hover:text-gray-400 duration-500"
                 >
                   {link.name}
