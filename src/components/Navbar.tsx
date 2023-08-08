@@ -19,7 +19,7 @@ const Navbar = () => {
 	const [activeLink, setActiveLink] = useState("");
 	const router = useRouter();
 
-	const handleLinkClick = (name) => {
+	const handleLinkClick = (name: React.SetStateAction<string>) => {
 		setActiveLink(name);
 		setOpen(false);
 	};
