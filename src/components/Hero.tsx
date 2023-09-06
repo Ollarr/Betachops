@@ -1,33 +1,29 @@
 import React, { useState, useEffect } from "react";
 import Button from "./Button";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import Carousel from "react-multi-carousel"; // Replace with the actual package import
+import "react-multi-carousel/lib/styles.css"; // Replace with the appropriate package styles import
 import Image from "next/image";
 import Image1 from "../assets/images/cheerful-african-american-guy-in-supermarket-choosing-fresh-grocery-using-phone.jpeg";
 import Image2 from "../assets/images/couple-with-face-masks-shopping-for-fruits-in-supermarket.jpeg";
 import Image3 from "../assets/images/cheerful-african-american-woman-in-supermarket-choosing-fresh-grocery-using-phone.jpeg";
 
 function Hero() {
-	const [currentSlide, setCurrentSlide] = useState(0);
-
-	useEffect(() => {
-		const interval = setInterval(() => {
-			setCurrentSlide((prevSlide) => (prevSlide + 1) % 3); // Adjust the number of slides
-		}, 2000); // Autoplay interval: 2000ms (2 seconds)
-
-		return () => clearInterval(interval); // Clear interval on component unmount
-	}, []);
-
-	const settings = {
-		dots: true,
-		infinite: true,
-		speed: 500,
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		initialSlide: currentSlide,
-		autoplay: true,
-		autoplaySpeed: 2000,
+	const responsive = {
+		desktop: {
+			breakpoint: { max: 3000, min: 1024 },
+			items: 1,
+			slidesToSlide: 1,
+		},
+		tablet: {
+			breakpoint: { max: 1024, min: 464 },
+			items: 1,
+			slidesToSlide: 1,
+		},
+		mobile: {
+			breakpoint: { max: 464, min: 0 },
+			items: 1,
+			slidesToSlide: 1,
+		},
 	};
 
 	return (
@@ -53,15 +49,48 @@ function Hero() {
 							</Button>
 						</div>
 					</div>
-					<div className="w-full lg:w-1/2 h-full  relative px-4 lg:px-14">
-						<Slider {...settings}>
-							<div>
-								<Image
-									className="w-full h-full  object-cover"
-									src={Image1}
-									loading={"lazy"}
-									alt="Image1"
-								/>
+					<div className="w-full lg:w-1/2 h-full  relative px-4">
+						<Carousel
+							responsive={responsive}
+							swipeable={true}
+							draggable={true}
+							showDots={true}
+							infinite={true}
+							autoPlaySpeed={1000}
+							keyBoardControl={true}
+							customTransition="transform 300ms ease-in-out"
+							transitionDuration={300}
+							containerClass="carousel-container"
+							itemClass="carousel-item"
+							// removeArrowOnDeviceType={["tablet", "mobile"]}
+						>
+							<div className="firstImageContainer flex justify-between space-x-4 lg:px-6 ">
+								<div>
+									<Image
+										className="w-72 h-[360px]  object-cover"
+										src={Image1}
+										loading={"lazy"}
+										alt="Image1"
+									/>
+								</div>
+								<div className="flex flex-col gap-y-4 justify-center">
+									<div>
+										<Image
+											className="w-60 h-[150px]  object-cover "
+											src={Image3}
+											loading={"lazy"}
+											alt="Image3"
+										/>
+									</div>
+									<div>
+										<Image
+											className="w-60 h-[170px]  object-cover "
+											src={Image2}
+											loading={"lazy"}
+											alt="Image2"
+										/>
+									</div>
+								</div>
 							</div>
 							<div>
 								<Image
@@ -79,7 +108,7 @@ function Hero() {
 									alt="Image3"
 								/>
 							</div>
-						</Slider>
+						</Carousel>
 					</div>
 				</div>
 			</section>
