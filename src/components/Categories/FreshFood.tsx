@@ -75,7 +75,7 @@ function FreshFood() {
 	return (
 		<div className="px-12 mb-4">
 			<h2 className="text-2xl mb-4">Fresh Food </h2>
-			<Carousel responsive={responsive} partialVisbile>
+			<Carousel responsive={responsive} showDots={true} partialVisbile>
 				{freshFoodData.map((item) => (
 					<div key={item.id} className="">
 						<div className="card w-60  ">
