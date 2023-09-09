@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Link from "next/link";
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -7,6 +8,7 @@ function Drinks() {
 	const drinksData = [
 		{
 			id: 1,
+			category: "drinks",
 			name: "Fanta",
 			price: 3500,
 			image:
@@ -14,6 +16,7 @@ function Drinks() {
 		},
 		{
 			id: 2,
+			category: "drinks",
 			name: "CWAY refill water",
 			price: 1500,
 
@@ -22,6 +25,7 @@ function Drinks() {
 		},
 		{
 			id: 3,
+			category: "drinks",
 			name: "Hollandia",
 			price: 3500,
 
@@ -30,6 +34,7 @@ function Drinks() {
 		},
 		{
 			id: 4,
+			category: "drinks",
 			name: "Bottled water",
 			price: 1200,
 
@@ -38,6 +43,7 @@ function Drinks() {
 		},
 		{
 			id: 5,
+			category: "drinks",
 			name: "5 Alive pulpy orange",
 			price: 13500,
 
@@ -46,6 +52,7 @@ function Drinks() {
 		},
 		{
 			id: 6,
+			category: "drinks",
 			name: "Schweppes ginger",
 			price: 3500,
 
@@ -71,21 +78,28 @@ function Drinks() {
 			partialVisibilityGutter: 20,
 		},
 	};
-
 	return (
 		<div className="px-12 mb-4">
 			<h2 className="text-2xl mb-4">Drinks </h2>
 			<Carousel responsive={responsive} partialVisbile>
 				{drinksData.map((item) => (
-					<div key={item.id} className="">
-						<div className="card w-60  ">
+					<Link
+						key={item.id}
+						href={`product/${item.category}/${item.name}/${item.id}`}>
+						<div className="card w-60 cursor-pointer ">
 							<div className="flex flex-col border py-4 px-2 items-center justify-center">
 								<img src={item.image} alt={item.name} className="w-40 h-56" />
 								<h3>{item.name}</h3>
 								<h3>{item.price}</h3>
+								<button className="bg-indigo-600 hover:bg-green-500 text-gray-200 px-2 py-1 rounded cursor">
+									Add to cart
+								</button>
+								{/* <button className="my-2 border-2 border-orange-600 rounded px-2 py-1  ">
+									Add to cart
+								</button> */}
 							</div>
 						</div>
-					</div>
+					</Link>
 				))}
 			</Carousel>
 		</div>
