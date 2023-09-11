@@ -9,11 +9,13 @@ function Toiletries() {
 			id: 1,
 			name: "Irish spring",
 			price: 3500,
+			category: "toiletries",
 			image:
 				"https://www.supermart.ng/cdn/shop/files/spar0874_180x@2x.jpg?v=1688683558",
 		},
 		{
 			id: 2,
+			category: "toiletries",
 			name: "Veet hair removal",
 			price: 1500,
 
@@ -22,6 +24,7 @@ function Toiletries() {
 		},
 		{
 			id: 3,
+			category: "toiletries",
 			name: "Bic comfort razor",
 			price: 3500,
 
@@ -30,6 +33,7 @@ function Toiletries() {
 		},
 		{
 			id: 4,
+			category: "toiletries",
 			name: "Johnson's cotton buds",
 			price: 1200,
 
@@ -38,6 +42,7 @@ function Toiletries() {
 		},
 		{
 			id: 5,
+			category: "toiletries",
 			name: "Euthymol toothpaste",
 			price: 13500,
 
@@ -46,6 +51,7 @@ function Toiletries() {
 		},
 		{
 			id: 6,
+			category: "toiletries",
 			name: "Listerine Mouthwash",
 			price: 3500,
 
@@ -78,11 +84,14 @@ function Toiletries() {
 			<Carousel responsive={responsive} partialVisbile>
 				{toiletriesData.map((item) => (
 					<div key={item.id} className="">
-						<div className="card w-60  ">
+						<div className="card w-60 cursor-pointer ">
 							<div className="flex flex-col border py-4 items-center justify-center">
 								<img src={item.image} alt={item.name} className="w-40 h-56" />
 								<h3>{item.name}</h3>
 								<h3>{item.price}</h3>
+								<button className="bg-indigo-600 hover:bg-green-500 text-gray-200 px-2 py-1 rounded cursor">
+									Add to cart
+								</button>
 							</div>
 						</div>
 					</div>
