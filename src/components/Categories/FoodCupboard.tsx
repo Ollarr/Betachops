@@ -7,6 +7,7 @@ function FoodCupboard() {
 	const foodCupboardData = [
 		{
 			id: 1,
+			category: "foodCupboard",
 			name: "Semovita",
 			price: 600,
 			image:
@@ -14,6 +15,7 @@ function FoodCupboard() {
 		},
 		{
 			id: 2,
+			category: "foodCupboard",
 			name: "Golden Penny Macaroni",
 			price: 550,
 
@@ -22,6 +24,7 @@ function FoodCupboard() {
 		},
 		{
 			id: 3,
+			category: "foodCupboard",
 			name: "Knorr seasoning powder",
 			price: 950,
 
@@ -30,6 +33,7 @@ function FoodCupboard() {
 		},
 		{
 			id: 4,
+			category: "foodCupboard",
 			name: "Nutzy",
 			price: 800,
 
@@ -38,6 +42,7 @@ function FoodCupboard() {
 		},
 		{
 			id: 5,
+			category: "foodCupboard",
 			name: "Green giant sweetcorn",
 			price: 13500,
 
@@ -46,6 +51,7 @@ function FoodCupboard() {
 		},
 		{
 			id: 6,
+			category: "foodCupboard",
 			name: "Titus Sardine",
 			price: 800,
 
@@ -78,11 +84,14 @@ function FoodCupboard() {
 			<Carousel responsive={responsive} partialVisbile>
 				{foodCupboardData.map((item) => (
 					<div key={item.id} className="">
-						<div className="card w-60  ">
+						<div className="card w-60 cursor-pointer ">
 							<div className="flex flex-col border py-4 items-center justify-center">
 								<img src={item.image} alt={item.name} className="w-40 h-56" />
 								<h3>{item.name}</h3>
 								<h3>{item.price}</h3>
+								<button className="bg-indigo-600 hover:bg-green-500 text-gray-200 px-2 py-1 rounded cursor">
+									Add to cart
+								</button>
 							</div>
 						</div>
 					</div>
