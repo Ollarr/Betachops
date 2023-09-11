@@ -5,7 +5,7 @@ import Hero from "./Hero";
 function Header() {
 	return (
 		<div>
-			<Navbar />
+			{/* <Navbar /> */}
 			<Hero />
 		</div>
 	);
