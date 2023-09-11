@@ -28,7 +28,7 @@ function Hero() {
 
 	return (
 		<div>
-			<section className="mt-16">
+			<section className="mt-32">
 				<div className="container flex flex-col gap-y-4 justify-center mx-auto md:py-12  lg:flex-row lg:justify-between">
 					<div className="flex flex-col text-center rounded-sm  lg:text-left px-12 py-8">
 						<h1 className="text-5xl font-bold leading-none sm:text-6xl">
@@ -37,6 +37,10 @@ function Hero() {
 						<p className=" mb-2 text-lg ">
 							Home delivery and online reservation system for restaurants, cafe,
 							food & groceries.
+							{/* Betashops is a wholesome offline and online
+							store in Nigeria , offering nationwide delivery. We carry a vast
+							range of groceries including vegan products, cosmetics, home ware,
+							kitchen utensils and more. */}
 						</p>
 						<div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
 							<Button>
@@ -67,7 +71,7 @@ function Hero() {
 							<div className="firstImageContainer flex justify-between space-x-4 lg:px-6 ">
 								<div>
 									<Image
-										className="w-72 h-[360px]  object-cover"
+										className="w-72 h-[360px]  object-cover rounded-md"
 										src={Image1}
 										loading={"lazy"}
 										alt="Image1"
@@ -76,7 +80,7 @@ function Hero() {
 								<div className="flex flex-col gap-y-4 justify-center">
 									<div>
 										<Image
-											className="w-60 h-[150px]  object-cover "
+											className="w-60 h-[150px]  object-cover rounded-md "
 											src={Image3}
 											loading={"lazy"}
 											alt="Image3"
@@ -84,7 +88,7 @@ function Hero() {
 									</div>
 									<div>
 										<Image
-											className="w-60 h-[170px]  object-cover "
+											className="w-60 h-[170px]  object-cover rounded-md "
 											src={Image2}
 											loading={"lazy"}
 											alt="Image2"

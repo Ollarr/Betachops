@@ -1,4 +1,4 @@
-.marquee-text {
+/* .marquee-text {
 	white-space: nowrap;
 	overflow: hidden;
 	animation: marquee 10s linear infinite;
@@ -11,4 +11,4 @@
 	100% {
 		transform: translateX(-100%);
 	}
-}
+} */
