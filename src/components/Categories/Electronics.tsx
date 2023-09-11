@@ -7,6 +7,7 @@ function Electronics() {
 	const electronicsData = [
 		{
 			id: 1,
+			category: "electronics",
 			name: "Midea washer dryer front loader",
 			price: 3500,
 			image:
@@ -14,6 +15,7 @@ function Electronics() {
 		},
 		{
 			id: 2,
+			category: "electronics",
 			name: "Scanfrost cooker",
 			price: 1500,
 
@@ -22,6 +24,7 @@ function Electronics() {
 		},
 		{
 			id: 3,
+			category: "electronics",
 			name: "LG Smart TV",
 			price: 3500,
 
@@ -30,6 +33,7 @@ function Electronics() {
 		},
 		{
 			id: 4,
+			category: "electronics",
 			name: "Rite-Tek blender",
 			price: 1200,
 
@@ -38,6 +42,7 @@ function Electronics() {
 		},
 		{
 			id: 5,
+			category: "electronics",
 			name: "CWAY water dispenser",
 			price: 13500,
 
@@ -46,6 +51,7 @@ function Electronics() {
 		},
 		{
 			id: 6,
+			category: "electronics",
 			name: "PS5 Console",
 			price: 3500,
 
@@ -78,11 +84,14 @@ function Electronics() {
 			<Carousel responsive={responsive} partialVisbile>
 				{electronicsData.map((item) => (
 					<div key={item.id} className="">
-						<div className="card w-60  ">
+						<div className="card w-60 cursor-pointer ">
 							<div className="flex flex-col border py-4 px-2 items-center justify-center">
 								<img src={item.image} alt={item.name} className="w-full h-56" />
 								<h3>{item.name}</h3>
 								<h3>{item.price}</h3>
+								<button className="bg-indigo-600 hover:bg-green-500 text-gray-200 px-2 py-1 rounded cursor">
+									Add to cart
+								</button>
 							</div>
 						</div>
 					</div>
