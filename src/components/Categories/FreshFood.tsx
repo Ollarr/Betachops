@@ -7,6 +7,7 @@ function FreshFood() {
 	const freshFoodData = [
 		{
 			id: 1,
+			category: "freshFood",
 			name: "Fresh Tomatoes",
 			price: 3500,
 			image:
@@ -14,6 +15,7 @@ function FreshFood() {
 		},
 		{
 			id: 2,
+			category: "freshFood",
 			name: "Fresh chicken",
 			price: 1500,
 
@@ -22,6 +24,7 @@ function FreshFood() {
 		},
 		{
 			id: 3,
+			category: "freshFood",
 			name: "Fresh carrot",
 			price: 3500,
 
@@ -30,6 +33,7 @@ function FreshFood() {
 		},
 		{
 			id: 4,
+			category: "freshFood",
 			name: "Fresh Pumpkin",
 			price: 1200,
 
@@ -38,6 +42,7 @@ function FreshFood() {
 		},
 		{
 			id: 5,
+			category: "freshFood",
 			name: "Fresh potatoes",
 			price: 13500,
 
@@ -46,6 +51,7 @@ function FreshFood() {
 		},
 		{
 			id: 6,
+			category: "freshFood",
 			name: "Fresh bell pepper",
 			price: 3500,
 
@@ -78,11 +84,14 @@ function FreshFood() {
 			<Carousel responsive={responsive} showDots={true} partialVisbile>
 				{freshFoodData.map((item) => (
 					<div key={item.id} className="">
-						<div className="card w-60  ">
+						<div className="card w-60 cursor-pointer ">
 							<div className="flex flex-col border py-4 px-2 items-center justify-center">
 								<img src={item.image} alt={item.name} className="w-full h-56" />
 								<h3>{item.name}</h3>
 								<h3>{item.price}</h3>
+								<button className="bg-indigo-600 hover:bg-green-500 text-gray-200 px-2 py-1 rounded cursor">
+									Add to cart
+								</button>
 							</div>
 						</div>
 					</div>
