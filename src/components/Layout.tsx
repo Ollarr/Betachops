@@ -2,20 +2,20 @@ import React, { ReactNode } from "react";
 import Navbar from "./Navbar";
 
 interface LayoutProps {
-  children: ReactNode;
+	children: ReactNode;
 }
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
-  return (
-    <div className="">
-      <div className="flex flex-col ">
-        <Navbar />
+	return (
+		<div className="h-screen">
+			<div className="flex flex-col ">
+				<Navbar />
 
-        <main>{children}</main>
-      </div>
-      {/* <*** /> */}
-    </div>
-  );
+				<main>{children}</main>
+			</div>
+			{/* <*** /> */}
+		</div>
+	);
 };
 
 export default Layout;
