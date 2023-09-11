@@ -7,7 +7,7 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
 	return (
-		<div className="h-screen">
+		<div className="">
 			<div className="flex flex-col ">
 				<Navbar />
 
